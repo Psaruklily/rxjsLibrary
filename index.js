@@ -31,3 +31,17 @@ stream$.subscribe(
         console.log('Completed!') // Функція, завдяки якій можна дізнатися коли завершився форсований стрім
     }
 );
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+//LESSON 2. rxjs.fromEvent()
+
+let button = document.querySelector('button');
+
+let btn$ = rxjs.fromEvent(button, 'click');
+
+btn$.subscribe(function(event) {
+    console.log(event)
+})
+
+rxjs.fromEvent(document.querySelector('input'), 'keyup')
+    .subscribe(event => console.log(event))
